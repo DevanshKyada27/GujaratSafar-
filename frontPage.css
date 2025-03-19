@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 250px;
+    transition: 0.5s ease;
+}
+
+header .name {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+header .nav-bar {
+    position: relative;
+}
+
+header .nav-btn {
+    position: relative;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 16px 32px;
+    text-align: center;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+header .nav-btn:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home::before {
+    z-index: 7;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.home .content {
+    z-index: 8;
+    width: 70%;
+    padding: 100px 200px;
+    text-align: center;
+}
+
+.home .content h1 {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 75px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.home .content h1 span {
+    font-weight: 900;
+}
+
+section .content .title {
+    color: rgb(232, 176, 108);
+}
+
+section .content #element {
+    color: rgb(232, 176, 108);
+}
+
+.home .content h2 {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 750;
+    margin-top: 25px;
+    letter-spacing: 1.8px;
+    position: relative;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+    transition: color 0.3s ease;
+}
+
+.slider-navigation {
+    display: none;
+}
+
+.img-slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    transition: transform 1.5s ease-in-out;
+}
+
+body {
+    margin: 0;
+}
+
+@media (max-width: 1040px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    .home .content {
+        padding: 100px 20px;
+    }
+}
+
+/* trip planner css*/
+.trip-planner {
+    background: linear-gradient(to right, #f8f8f8, #ffffff);
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 50px auto;
+    max-width: 90%;
+}
+
+.planner-title {
+    font-size: 3rem;
+    color: #ff7043;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.planner-header p {
+    color: #666;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    max-width: 800px;
+    line-height: 1.6;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.choice {
+    margin: 30px 0;
+}
+
+.choice h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/*select dropdown bar*/
+.dropdown-content {
+    position: relative;
+    width: 300px;
+    max-width: 100%;
+    margin: auto;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#myInput {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+#myDropdown {
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#myDropdown div {
+    padding: 12px;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.2s;
+}
+
+#myDropdown div:hover {
+    background-color: #ff7043;
+    color: white;
+}
+
+.select-days .day-select {
+    position: relative;
+    width: 500px;
+    margin: auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#day {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.select-days h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.budget {
+    margin: 40px 0;
+}
+
+.budget h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.budget-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.budget-container div {
+    background: #fefefe;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.budget-container div:hover {
+    transform: translateY(-5px);
+    background-color: #ff7043;
+    color: white;
+}
+
+.budget-container .selected {
+    background-color: #ff7043;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.plan-to-travel {
+    margin: 40px 0;
+}
+
+.plan-to-travel h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.plan-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.plan-container div {
+    background: #fefefe;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.plan-container div:hover {
+    transform: translateY(-5px);
+    background-color: #4caf50;
+    color: white;
+}
+
+.plan-container .selected {
+    background-color: #4caf50;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.generate-btn {
+    margin-top: 30px;
+}
+
+.generate-btn button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.generate-btn button:hover {
+    background-color: #ff7043;
+    transform: translateY(-5px);
+}
+
