@@ -141,6 +141,212 @@ body {
     }
 }
 
+.gujMap {
+    background-image: url(https://www.gujarattourism.com/content/dam/gujrattourism/images/other-images/common-banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: auto;
+}
+
+.map-container {
+    width: 600px;
+    height: 600px;
+    padding-top: 50px;
+    margin-right: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    right: 2%;
+}
+
+.map-container path {
+    fill: rgba(255, 255, 255, 0.8);
+    stroke: black;
+    transition: fill 0.3s;
+    pointer-events: auto;
+}
+
+.map-container path:hover {
+    fill: darkorange;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: none;
+    z-index: 5;
+    pointer-events: none;
+}
+
+#hover-info {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    color: black;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 6;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+}
+
+#hover-info::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.95) transparent transparent transparent;
+}
+
+.info-card {
+    position: static;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background with transparency */
+    padding: 20px;
+    border-radius: 15px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 450px;
+    transition: opacity 0.3s ease-in-out; /* Smooth fade transition */
+    font-family: 'Poppins', sans-serif;
+    z-index: 10; 
+    margin-top: 30px;
+    margin-right: 700px;
+    margin-bottom: 90px;
+    padding: 40px;
+}
+
+.info-card h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: darkorange;
+}
+
+.info-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.info-card img {
+    width: 100%; /* Adjust as needed */
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block; /* Ensures it is visible */
+    margin-top: 10px;
+}
+
+/* Style for Image Carousel */
+.image-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+/* Image Styling */
+.image-carousel img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect for Image */
+.image-carousel img:hover {
+    transform: scale(1.03);
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.218);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10; /* Ensures buttons are above the image */
+}
+
+/* Hover Effect */
+.carousel-btn:hover {
+    background-color: rgba(255, 165, 0, 0.9);
+    transform: scale(1.1);
+}
+
+/* Fix Button Clickability */
+#prev-btn {
+    left: 5px;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+#next-btn {
+    right: 5px;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+
+
+.explore-btn {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: darkorange; 
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: red; 
+}
+
 /* trip planner css*/
 .trip-planner {
     background: linear-gradient(to right, #f8f8f8, #ffffff);
