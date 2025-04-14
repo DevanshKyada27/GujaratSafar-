@@ -9,9 +9,9 @@ GujaratSafar is an intelligent travel planning application that leverages AI to 
 ## 📋 Table of Contents
 - [✨ Features](#-features)
 - [🛠️ Technologies Used](#️-technologies-used)
+- [🤖 AI Integration](#-ai-integration)
 - [📋 Prerequisites](#-prerequisites)
 - [🚀 Installation](#-installation)
-- [🤖 AI Integration](#-ai-integration)
 - [🔧 Configuration](#-configuration)
 - [🤝 Contributing](#-contributing)
 - [🙏 Acknowledgements](#-acknowledgements)
@@ -43,6 +43,18 @@ GujaratSafar is an intelligent travel planning application that leverages AI to 
 
 ### Development Tools
 - **⚡ Vite**: Next-generation frontend build tool
+
+## 🤖 AI Integration
+GujaratSafar leverages Google's Generative AI capabilities for:
+
+### Trip Planning Features
+- **Itinerary Generation**: Creates detailed day-by-day plans based on user preferences
+- **Hotel Recommendations**: Suggests accommodations that match budget and group size
+- **Activity Scheduling**: Plans morning, afternoon, and evening activities
+- **Travel Time Estimation**: Provides travel time between locations
+
+### AI Model Details
+- Uses Google's Gemini 2.0 Flash model
 
 ## 📋 Prerequisites
 
@@ -87,18 +99,6 @@ You'll also need:
    
    - **Landing page**: Open `frontPage.html` directly in your browser
    - **Main application**: Visit `http://localhost:5173` (or the port shown in your terminal)
-
-## 🤖 AI Integration
-GujaratSafar leverages Google's Generative AI capabilities for:
-
-### Trip Planning Features
-- **Itinerary Generation**: Creates detailed day-by-day plans based on user preferences
-- **Hotel Recommendations**: Suggests accommodations that match budget and group size
-- **Activity Scheduling**: Plans morning, afternoon, and evening activities
-- **Travel Time Estimation**: Provides travel time between locations
-
-### AI Model Details
-- Uses Google's Gemini 2.0 Flash model
   
 ## 🔧 Configuration
 
