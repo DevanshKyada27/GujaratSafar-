@@ -49,3 +49,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+
+// //google authentication
+// const modal = document.getElementById("signInModal");
+// const signInBtn = document.querySelector(".nav-btn"); // Sign-in Button
+// const generateTripBtn = document.querySelector(".generate-btn button"); // Generate Trip Button
+// const closeBtn = document.querySelector(".close-btn")
+// // Open modal when Sign-in or Generate Trip is clicked
+// signInBtn.addEventListener("click", () => modal.style.display = "block");
+// generateTripBtn.addEventListener("click", () => modal.style.display = "block")
+// // Close modal when 'X' button is clicked
+// closeBtn.addEventListener("click", () => modal.style.display = "none")
+// // Close modal when clicking outside the modal content
+// window.addEventListener("click", (event) => {
+//     if (event.target === modal) modal.style.display = "none";
+// });
+
+// //redirect to the main react page
+// document.querySelector('.generate-btn').addEventListener('click', function () {
+//     window.location.href = 'http://localhost:5173/main_page'; // or your deployed route
+// });
