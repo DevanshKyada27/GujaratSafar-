@@ -537,3 +537,159 @@ body {
     background-color: #ff7043;
     transform: translateY(-5px);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-text: #333;
+  --secondary-text: #777;
+  --background: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.team-marquee-section {
+  padding: 60px 0;
+  background: var(--background);
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--primary-text);
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.marquee-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.marquee-row {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: scrollLeft 30s linear infinite;
+  gap: 80px;
+}
+
+.second-row {
+  animation: scrollRight 25s linear infinite;
+}
+
+.team-item, .lang-item {
+  flex: 0 0 auto;
+  text-align: center;
+  width: 160px;
+  margin: 0 20px;
+}
+
+.team-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.lang-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.team-item h3, .lang-item h3 {
+  margin: 0 0 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-text);
+}
+
+.team-item p, .lang-item p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--secondary-text);
+  font-weight: 400;
+}
+
+.team-item:hover img, .lang-item:hover img {
+  transform: scale(1.1);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(calc(-100% / 2));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Make sure content is center-aligned for all screen sizes */
+@media (max-width: 768px) {
+  .marquee-content {
+    gap: 40px;
+  }
+  
+  .team-item, .lang-item {
+    width: 140px;
+    margin: 0 15px;
+  }
+  
+  .team-item img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .lang-item img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.meet-our-team-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* removes underline */
+    z-index: 1000;
+  }
+  
+  .meet-our-team-btn:hover {
+    text-decoration: none;
+    color: #ddd; /* subtle hover effect */
+  }
+  
+  

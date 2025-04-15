@@ -1,4 +1,20 @@
 //typed js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const marqueeContents = document.querySelectorAll('.marquee-content');
+    
+    // Pauses the animation when hovering
+    marqueeContents.forEach(content => {
+      content.addEventListener('mouseenter', () => {
+        content.style.animationPlayState = 'paused';
+      });
+      
+      content.addEventListener('mouseleave', () => {
+        content.style.animationPlayState = 'running';
+      });
+    });
+  });
+
 var typed = new Typed('#element', {
     strings: ['Ahmedabad (અમદાવાદ)', 'Vadodara (વડોદરા)', 'Gandhinagar (ગાંધીનગર)', 'Surat (સુરત)', 'Dwarka (દ્વારકા)', 'Somnath (સોમનાથ)', 'Kutch (કચ્છ)', 'Rajkot (રાજકોટ)', 'and many more....'],
     typeSpeed: 120,
@@ -393,6 +409,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+  
+
+
 
 
 
@@ -416,3 +435,4 @@ document.addEventListener("DOMContentLoaded", function () {
 // document.querySelector('.generate-btn').addEventListener('click', function () {
 //     window.location.href = 'http://localhost:5173/main_page'; // or your deployed route
 // });
+
