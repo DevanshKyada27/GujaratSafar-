@@ -178,7 +178,7 @@ const districtDetails = {
         title: "Jamnagar",
         description: "Jamnagar is a culturally vibrant city located on the western coast of Gujarat, India.Jamnagar also holds a unique place in the world of wellness, as it is home to the Gujarat Ayurved University, one of the most renowned institutions for Ayurvedic studies and research globally.With its unique blend of tradition, education, nature, and culture, Jamnagar stands out as a truly distinctive destination in Gujarat..",
         image: [
-            "23.jpg",  // Panmal Lake Park
+            "./svgimages/23.jpg",  // Panmal Lake Park
             "24.jpg",  // Lakhota Palace
             "25.jpg",  //Bhujiyo Kotho
             "26.jpg",  //Khijadia Bird Senctuary
