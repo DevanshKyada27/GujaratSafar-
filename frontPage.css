@@ -267,12 +267,12 @@ body {
     transform: scale(1.03);
 }
 
-/* Carousel Buttons */
+/* Carousel Buttons - Enhanced */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.218);
+    background-color: rgba(255, 140, 0, 0.7);
     color: white;
     border: none;
     padding: 12px 16px;
@@ -280,29 +280,44 @@ body {
     font-weight: bold;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 10; /* Ensures buttons are above the image */
+    z-index: 10;
+    opacity: 0.8;
 }
 
 /* Hover Effect */
 .carousel-btn:hover {
-    background-color: rgba(255, 165, 0, 0.9);
-    transform: scale(1.1);
+    background-color: rgba(255, 140, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
 }
 
 /* Fix Button Clickability */
 #prev-btn {
-    left: 5px;
-    z-index: 1000; /* Ensure it's on top */
+    left: 10px;
+    z-index: 1000;
 }
 
 #next-btn {
-    right: 5px;
-    z-index: 1000; /* Ensure it's on top */
+    right: 10px;
+    z-index: 1000;
 }
 
+/* Image Styling with Fade Transition */
+.image-carousel img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.4s ease-in-out, transform 0.3s ease;
+}
 
+/* Hover Effect for Image */
+.image-carousel img:hover {
+    transform: scale(1.02);
+}
 
 .explore-btn {
     background-color: #4CAF50; /* Green button */
