@@ -15,10 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-var typed = new Typed('#element', {
+document.addEventListener('DOMContentLoaded', function() {
+    var typed = new Typed('#element', {
     strings: ['Ahmedabad (અમદાવાદ)', 'Vadodara (વડોદરા)', 'Gandhinagar (ગાંધીનગર)', 'Surat (સુરત)', 'Dwarka (દ્વારકા)', 'Somnath (સોમનાથ)', 'Kutch (કચ્છ)', 'Rajkot (રાજકોટ)', 'and many more....'],
     typeSpeed: 120,
     loop: true
+    });
 });
 
 
@@ -82,11 +84,16 @@ const districtNames = {
 
 paths.forEach((path) => {
     path.addEventListener("mouseenter", (e) => {
+        console.log("Mouse entered path:", e.target.id); // Log path ID
         const districtId = e.target.id; // Get the ID of the hovered path
         const districtName = districtNames[districtId]; // Find the name in the dictionary
+        console.log("District ID:", districtId, "District Name:", districtName); // Log ID and Name
         if (districtName) {
             hoverInfo.style.display = "block"; // Show the tooltip
             hoverInfo.textContent = districtName; // Set the district name
+            console.log("Tooltip should be visible with text:", districtName); // Log tooltip update
+        } else {
+            console.log("District name not found for ID:", districtId); // Log if name not found
         }
     });
 
@@ -100,12 +107,13 @@ paths.forEach((path) => {
         const mouseY = e.clientY - containerRect.top;
 
         // Update tooltip position slightly below and to the right of the mouse pointer
-        hoverInfo.style.top = `${mouseY + 25}px`; // Place tooltip slightly below mouse pointer
-        hoverInfo.style.left = `${mouseX + 820}px`; // Place tooltip slightly to the right of mouse pointer
+        hoverInfo.style.top = `${mouseY + 20}px`; // Place tooltip slightly below mouse pointer
+        hoverInfo.style.left = `${mouseX + 15}px`; // Place tooltip slightly to the right of mouse pointer
     });
 
     path.addEventListener("mouseleave", () => {
         hoverInfo.style.display = "none"; // Hide the tooltip when the mouse leaves
+        console.log("Mouse left path:", path.id); // Log mouse leave
     });
 });
 
@@ -120,12 +128,12 @@ const districtDetails = {
             "https://www.kiomoi.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fkmadmin%2Fimage%2Fupload%2Fv1560260650%2Fkiomoi%2FAhmedabad%2Fkankaria%2520Lake%2520%2520%25281%2529.webp&w=3840&q=75",
             "https://sabarmatiriverfront.com/wp-content/uploads/2020/06/park-img.jpg",
             "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcT2ixf9f5lqqzRjitu-cdrfi8rdFiWVj0gs5TsO4d4wimkoj3HFPZiCBjTbvpb3L9VNmJ1NWKCCx6k3ZNVuhBfy58pfpk_EvU7D1FbFnQ",
-            "/svgimages/1.jpg",
-            "/svgimages/2.jpg",
-            "/svgimages/3.jpg",
-            "/svgimages/7jpg.jpg",
-            "/svgimages/8.jpg",
-            "/svgimages/9.jpg"
+            "./svgimages/1.jpg",
+            "./svgimages/2.jpg",
+            "./svgimages/3.jpg",
+            "./svgimages/7.jpg",
+            "./svgimages/8.jpg",
+            "./svgimages/9.jpg"
         ]
 
     },
@@ -136,9 +144,9 @@ const districtDetails = {
             "https://www.gujarattourism.com/content/dam/gujrattourism/images/weekend-get-aways/great-rann-of-kutch/gallery/Great%20Rann%20Of%20Kutch%20(14).jpg",
             "https://goboundless.co/wp-content/uploads/2023/09/ruuunn.png",
             "https://temple.yatradham.org/public/Product/temple/temple_yXQ8anNL_202408041800350.jpg",
-            "/svgimages/4.jpg",
-            "/svgimages/5.jpg",
-            "/svgimages/6.jpg",
+            "./svgimages/4.jpg",
+            "./svgimages/5.jpg",
+            "./svgimages/6.jpg"
         ]
 
     },
@@ -149,9 +157,9 @@ const districtDetails = {
             "https://upload.wikimedia.org/wikipedia/commons/b/ba/Ambaji_-_Gujarat%2C_India_%284587160875%29.jpg",
             "https://cdn.s3waas.gov.in/s38ebda540cbcc4d7336496819a46a1b68/uploads/bfi_thumb/2018040281-olwa8l11fpid0koubm999gf4md5cn3bvuy0sc47mri.jpg",
             "https://cdn.s3waas.gov.in/s38ebda540cbcc4d7336496819a46a1b68/uploads/bfi_thumb/2018071986-olwa8sjy3dgq2qwe8twq8u8hoipkij8vm56ibegb62.jpg",
-            "/svgimages/10.jpg",
-            "/svgimages/11.jpg",
-            "/svgimages/12.jpg",
+            "./svgimages/10.jpg",
+            "./svgimages/11.jpg",
+            "./svgimages/12.jpg",
         ]
     },
     "Surendranagar": {
@@ -161,12 +169,12 @@ const districtDetails = {
             "https://media.navgujaratsamay.com/ngs-mig/uploads/mediaGallery/image/1666672438585.jpg-org",
             "https://www.gujarattourism.com/content/dam/gujrattourism/images/zone-wise-thumb-images/junagadh.jpg",
             "https://t3.ftcdn.net/jpg/10/39/57/60/360_F_1039576074_KK6lWDfnLdQEtKluu0lUL9CbrBKhw9Bf.jpg",
-            "/svgimages/13.jpg",
-            "/svgimages/14.jpg",
-            "/svgimages/15.jpg",
-            "/svgimages/16.jpg",
-            "/svgimages/17.jpg",
-            "/svgimages/18.jpg",
+            "./svgimages/13.jpg",
+            "./svgimages/14.jpg",
+            "./svgimages/15.jpg",
+            "./svgimages/16.jpg",
+            "./svgimages/17.jpg",
+            "./svgimages/18.jpg",
         ]
     },
     "Rajkot": {
@@ -176,20 +184,20 @@ const districtDetails = {
             "https://myholidayhappiness.com/uploads/jagat-mandir-2842.jpg",
             "https://www.gujarattourism.com/content/dam/gujrattourism/images/june/Kaba-Gandhi-No-Delo.jpg",
             "https://www.gujaratexpert.com/blog/wp-content/uploads/2023/11/Ramvan-Gujarat.jpg",
-            "/svgimages/19.jpg",
-            "/svgimages/20.jpg",
-            "/svgimages/21.jpg",
-            "/svgimages/22.jpg",
+            "./svgimages/19.jpg",
+            "./svgimages/20.jpg",
+            "./svgimages/21.jpg",
+            "./svgimages/22.jpg",
         ]
     },
     "Jamnagar": {
         title: "Jamnagar",
         description: "Jamnagar is a city in Gujarat, India, known for its local crafts, including bandhni and metalware. The city is also home to the Gujarat Ayurveda...",
         images: [
-            "/svgimages/23.jpg",
-            "/svgimages/24.jpg",
-            "/svgimages/25.jpg",
-            "/svgimages/26.jpg",
+            "./svgimages/23.jpg",
+            "./svgimages/24.jpg",
+            "./svgimages/25.jpg",
+            "./svgimages/26.jpg",
         ]
     },
     "Gandhinagar": {
@@ -199,20 +207,20 @@ const districtDetails = {
             "https://lh3.googleusercontent.com/proxy/l7vV4nZqm2gJP51c6G0RNM96xO4-4NwLmu6zSq3h1WhOwoJ3NRjKUpUXLNbu3YjTdu0qDcNs5z4suZVcz6ZObdMYDGIWQK8Gojh2nuVlpfZ9wzcCRsL5h5AWhO3UOulUjccoKjnWjC4",
             "https://www.gujarattourism.com/content/dam/gujrattourism/images/june/Adalaj-ni-Vav.jpg",
             "https://content.jdmagicbox.com/comp/def_content_category/botanical-gardens/aa8fc412af-botanical-gardens-4-k2tko.jpg",
-            "/svgimages/27.jpg",
-            "/svgimages/28.jpg",
-            "/svgimages/29.jpg",
+            "./svgimages/27.jpg",
+            "./svgimages/28.jpg",
+            "./svgimages/29.jpg",
         ]
     },
     "Vadodara": {
         title: "Vadodara",
         description: "Patola silk sarees, bandhnis and traditional ghagras, embroidered blankets, bracelets, jewellery, and khadi are all well-known products from Vadodara....",
         images: [
-            "/svgimages/30.jpg",
-            "/svgimages/31.jpg",
-            "/svgimages/32.jpg",
-            "/svgimages/33.jpg",
-            "/svgimages/34.jpg",
+            "./svgimages/30.jpg",
+            "./svgimages/31.jpg",
+            "./svgimages/32jpg.jpg",
+            "./svgimages/33.JPG",
+            "./svgimages/34.jpg",
         ]
     },
     "Surat": {
@@ -222,8 +230,8 @@ const districtDetails = {
             "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRFYfs4ossV0yoIQS4_9a-yBb9Px09fHxqlpGoUl8eY2uiT_WEOGHoyuNIeR0KIAPDCDshwknggG26yggSkBUlaS2IQlVCD8RGmvRmajw",
             "https://www.gujarattourism.com/content/dam/gujrattourism/images/home_page/opti/11-2-20/Surat-Castle.jpg",
             "https://www.gujarattourism.com/content/dam/gujrattourism/images/flora--fauna/sneh-rashmi-botanical-garden/Sneh-Rashmi-Botanical-Garden-Thumbnail.jpg",
-            "/svgimages/35.jpg",
-            "/svgimages/36.jpg",
+            "./svgimages/35.jpg",
+            "./svgimages/36.jpg",
         ]
     },
     "Valsad": {
@@ -248,9 +256,9 @@ const districtDetails = {
         title: "Morbi",
         description: "Morbi, Gujarat is renowned for its ceramic industry. Around 70% of India's ceramics are produced here. Morbi is also known for its production of...",
         images: [
-            "/svgimages/37.jpg",
-            "/svgimages/38.jpg",
-            "/svgimages/39.jpg",
+            "./svgimages/37.jpg",
+            "./svgimages/38.jpg",
+            "./svgimages/39.jpg",
         ]
     },
 
@@ -258,10 +266,10 @@ const districtDetails = {
         title: "Patan",
         description: "Patan is a historic city in Gujarat, India, known for its rich cultural heritage and architectural marvels. It was the capital of the Chalukya (Solanki) dynasty in the 8th–12th centuries. The city is famous for the Rani ki Vav and a UNESCO World Heritage stepwell.",
         images: [
-            "/svgimages/40.jpg",
-            "/svgimages/41.jpg",
-            "/svgimages/42.jpg",
-            "/svgimages/43.jpg"
+            "./svgimages/40.jpg",
+            "./svgimages/41.png",
+            "./svgimages/42jpg.jpg",
+            "./svgimages/43.jpg"
         ]
     },
 
@@ -269,9 +277,9 @@ const districtDetails = {
         title:"Navsari",
         description: "Navsari is a city in Gujarat, India, known for its historical significance and Parsi heritage. It is an important commercial and industrial hub, especially for diamond cutting, textiles, and agriculture. The city has a rich cultural history and is famous as the birthplace of Jamsetji Tata, the founder of Tata Group.",
         images: [
-            "/svgimages/44.jpg",
-            "/svgimages/45.jpg",
-            "/svgimages/46.jpg",
+            "./svgimages/44.jpg",
+            "./svgimages/45.jpg",
+            "./svgimages/46.jpg",
         ]
 
     },
@@ -280,9 +288,8 @@ const districtDetails = {
         title:"GirSomnath",
         description: "Gir Somnath is a district in Gujarat, India, known for the famous Somnath Temple, one of the twelve Jyotirlingas of Lord Shiva. It is also home to the Gir National Park, the only habitat of Asiatic lions. The district has historical and religious significance, attracting pilgrims and wildlife enthusiasts alike.",
         images: [
-            "/svgimages/49.jpg",
-            "/svgimages/50.jpg",
-            "/svgimages/51.jpg",
+            "./svgimages/50.jpg",
+            "./svgimages/51.jpg",
         ]
 
     },
@@ -291,9 +298,9 @@ const districtDetails = {
         title:"Anand",
         description: "Anand is a city in Gujarat, India, known as the Milk Capital of India because it is home to Amul, the country's largest dairy cooperative. It is a major educational and industrial hub, housing Anand Agricultural University (AAU) and IRMA (Institute of Rural Management Anand).",
         images: [
-            "/svgimages/47.jpg",
-            "/svgimages/52.jpg",
-            "/svgimages/53.jpg",
+            "./svgimages/47.jpg",
+            "./svgimages/52.jpg",
+            "./svgimages/53.jpg",
         ]
 
     },
@@ -302,8 +309,8 @@ const districtDetails = {
         title:"Bharuch",
         description: "Bharuch is a taluka and situated on the banks of river Narmada in the Bharuch district in Gujarat India. Famous for its salty peanuts & quality...",
         images: [
-            "/svgimages/54.jpg",
-            "/svgimages/55.jpg",
+            "./svgimages/54.jpg",
+            "./svgimages/55.jpg",
         ]
 
     },
@@ -312,8 +319,8 @@ const districtDetails = {
         title:"Tapi",
         description: "The five talukas that make up the newly created Tapi district are Vyara, Songadh, Uchchal, Nizar, and Valod. In the Tapi area, Vyara and Songadh are...",
         images: [
-            "/svgimages/56.jpg",
-            "/svgimages/57.jpg",
+            "./svgimages/56.jpg",
+            "./svgimages/57.jpg",
         ]
 
     },
@@ -322,8 +329,8 @@ const districtDetails = {
         title:"Dang",
         description: "The Dang district in the Aravallis is a breathtakingly beautiful part of Gujarat, with stunning waterfalls and lush vegetation. They are a perfect...",
         images: [
-            "/svgimages/58.jpg",
-            "/svgimages/59.jpg",
+            "./svgimages/58.jpg",
+            "./svgimages/59.jpg",
         ]
 
     },
@@ -332,8 +339,8 @@ const districtDetails = {
         title:"Narmada",
         description: "Looking for a breathtaking natural destination in Gujarat? Look no further than the stunning waterfalls of the Narmada district! Marvel at the beauty...",
         images: [
-            "/svgimages/60.jpg",
-            "/svgimages/61.jpg",
+            "./svgimages/60.jpg",
+            "./svgimages/61.jpg",
         ]
 
     },
@@ -342,9 +349,9 @@ const districtDetails = {
         title:"ChhotaUdepur",
         description: "Chhota Udaipur, town of 108 temples, is an Indian city in the state of Gujarat. It lies on the edge of a big lake, with a series of temples along the...",
         images: [
-            "/svgimages/62.jpg",
-            "/svgimages/63.jpg",
-            "/svgimages/64.jpg",
+            "./svgimages/62.jpg",
+            "./svgimages/63.jpg",
+            "./svgimages/64jpg.jpg",
         ]
 
     },
@@ -353,8 +360,8 @@ const districtDetails = {
         title:"Kheda",
         description: "Located in the heart of Gujarat, Kheda district is a region steeped in history, culture, and agricultural prosperity. Often referred to as the “Granary of Gujarat,” Kheda has played a pivotal role in the state’s development, both economically and historically.With its blend of historical significance, agricultural richness, and peaceful landscapes, Kheda remains a vital and culturally vibrant part of Gujarat, offering visitors a journey through the heartland of the state.",
         images: [
-            "/svgimages/65.jpg", //  Galteshwar Mahadev Temple
-            "/svgimages/66.jpg", // Ranchhodril Temple
+            "./svgimages/65.jpg", //  Galteshwar Mahadev Temple
+            "./svgimages/66.jpg", // Ranchhodril Temple
         ]
 
     },
@@ -363,30 +370,104 @@ const districtDetails = {
         title:"Porbandar",
         description: "Situated along the scenic shores of the Arabian Sea, Porbandar is a historic coastal city in the Saurashtra region of Gujarat, known for its cultural legacy, maritime heritage, and spiritual significance. This charming town holds a special place in India's history as the birthplace of Mahatma Gandhi, the Father of the Nation.",
         images: [
-            "/svgimages/67.jpg", // Madhavpur Beach
-            "/svgimages/71.jpg", // Porbandar Port
+            "./svgimages/67.jpg", // Madhavpur Beach
+            "./svgimages/71.jpg", // Porbandar Port
         ]
 
     },
 
     "Mehsana": {
         title:"Mehsana",
-        description: "Located in the northwestern heartland of Gujarat, Mehsana district is a region that beautifully balances tradition with modern progress. Known for its rich cultural heritage, architectural landmarks, and economic vitality, Mehsana plays a significant role in the state’s agricultural and industrial landscape.",
+        description: "Located in the northwestern heartland of Gujarat, Mehsana district is a region that beautifully balances tradition with modern progress. Known for its rich cultural heritage, architectural landmarks, and economic vitality, Mehsana plays a significant role in the state's agricultural and industrial landscape.",
         images: [
-            "/svgimages/69.jpg", //  Bahuchar mata Temple
-            "/svgimages/70.jpg", //  Dharoi Dam
+            "./svgimages/69.jpg", //  Bahuchar mata Temple
+            "./svgimages/70.jpg", //  Dharoi Dam
         ]
 
     },
 
-    // "Junagadh": {
-    //     title:"Junagadh",
-    //     description: "Nestled at the foot of the majestic Girnar Hills, Junagadh is a historically rich city in the Saurashtra region of Gujarat, where ancient legends, diverse cultures, and natural beauty come together in harmony. With a name that means "Old Fort," Junagadh is a treasure trove of heritage sites that span Hindu, Buddhist, Jain, and Islamic influences.",
-    //     images: [
-    //         "/svgimages/72.jpg", //  Girnar Temple
-    //         "/svgimages/73.jpg", //  Sakkarbaug Zoological Garden
-    //     ]
-    // },
+    "Panchmahal": {
+        title: "Panchmahal",
+        description: "Panchmahal district in Gujarat is known for its rich historical heritage and natural beauty. Home to the UNESCO World Heritage Site of Champaner-Pavagadh Archaeological Park, it features stunning Indo-Islamic architecture, ancient temples, and the majestic Pavagadh Hill. The district offers a perfect blend of cultural landmarks, tribal heritage, and scenic landscapes.",
+        images: [
+            "./svgimages/Citadel-sat-kaman-banner(1).jpg", // Champaner-Pavagadh Archaeological Park
+            "./svgimages/Jami-Masjid-Campaner.webp", // Kalika Mata Temple
+            "./svgimages/Panch_Mahal_and_its_gardens.jpg",
+            "./svgimages/Panchmahal-Godhra.jpg",
+        ]
+    },
+
+    "Dahod": {
+        title: "Dahod",
+        description: "Dahod is a historically significant district in eastern Gujarat, known for its tribal culture and natural beauty. It was the birthplace of Mughal Emperor Aurangzeb and features several historical monuments. The district is home to vibrant tribal communities, colorful handicrafts, and picturesque landscapes with hills, forests, and water bodies.",
+        images: [
+            "./svgimages/d1.jpg",
+            "./svgimages/d2.jpg",
+            "./svgimages/d3.jpg",
+            "./svgimages/d4.jpg"
+        ]
+    },
+    "Bhavnagar": {
+    title: "Bhavnagar",
+    description: "Bhavnagar is a coastal district in Gujarat, rich in history, culture, and industry. Known for its thriving diamond cutting and ship-breaking industries, it also boasts historical landmarks, vibrant markets, and scenic coastal views. Attractions include Takhteshwar Temple, Victoria Park, and the nearby Velavadar Blackbuck National Park.",
+    images: [
+        "./svgimages/b1.jpg",
+        "./svgimages/b2.webp",
+        "./svgimages/b3.jpg",
+        "./svgimages/b4.jpg"
+    ]
+},
+"Amreli": {
+    title: "Amreli",
+    description: "Amreli is a serene district in the Saurashtra region of Gujarat, known for its spiritual heritage and close proximity to the Gir National Park. It is the birthplace of notable poet Zaverchand Meghani and home to many temples, stepwells, and wildlife sanctuaries. The district reflects a blend of rustic charm and cultural depth.",
+    images: [
+        "./svgimages/a1.jpeg",
+        "./svgimages/a2.jpg",
+        "./svgimages/a3.jpg",
+        "./svgimages/a4.jpg"
+    ]
+},
+"Aravalli": {
+    title: "Aravalli",
+    description: "Aravalli is a tribal-rich district in northeastern Gujarat, carved out to preserve and develop the unique culture and geography of the region. It features lush green forests, rolling hills, and ancient temples. The district is known for eco-tourism, tribal festivals, and archaeological sites that reflect its deep-rooted heritage.",
+    images: [
+        "./svgimages/aa1.jpg",
+        "./svgimages/aa2.webp",
+        "./svgimages/aa3.webp",
+        "./svgimages/aa4.jpg"
+    ]
+},
+"Mahisagar": {
+    title: "Mahisagar",
+    description: "Mahisagar is a culturally vibrant district in central Gujarat, named after the sacred Mahi River. Known for its tribal heritage, archaeological sites, and scenic landscapes, the district offers a blend of history and nature. It is home to Champaner-Pavagadh Archaeological Park, a UNESCO World Heritage Site nearby.",
+    images: [
+        "./svgimages/m1.jpg",
+        "./svgimages/m2.jpg",
+        "./svgimages/m3.jpeg",
+        "./svgimages/m4.avif"
+    ]
+},
+"Sabarkantha": {
+    title: "Sabarkantha",
+    description: "Sabarkantha is a scenic district in northern Gujarat, known for its historical forts, temples, and natural beauty. The district features the famous Idar hills, Polo Forest, and ancient architectural marvels. Rich in culture and tradition, Sabarkantha is also noted for its vibrant tribal communities and handicrafts.",
+    images: [
+        "./svgimages/s1.jpg",
+        "./svgimages/s2.webp",
+        "./svgimages/s3.avif",
+        "./svgimages/s4.jpg",
+        "./svgimages/s5.jpg"
+    ]
+},
+"Junagadh": {
+    title: "Junagadh",
+    description: "Junagadh is a historic and culturally rich district in Gujarat, nestled at the foot of the Girnar Hills. It boasts a legacy of Mauryan, Chalukya, and Muslim rule, evident in its forts, stepwells, and ancient inscriptions. Junagadh is also the gateway to Gir National Park, home of the Asiatic lion.",
+    images: [
+        "./svgimages/j11.jpg",
+        "./svgimages/j2.jpg",
+        "./svgimages/j4.jpg",
+        "./svgimages/j1.jpg"
+    ]
+},
 
 };
 
@@ -414,44 +495,40 @@ document.querySelectorAll(".map-container path").forEach(function (path) {
             console.log("Selected District:", districtId);
             console.log("Images:", details.images);
 
-            // Check if multiple images exist
             if (details.images && details.images.length > 0) {
                 currentImages = details.images;
-                currentImageIndex = 0;
-                infoImage.src = currentImages[currentImageIndex];
+                // Apply fade effect when changing images
+                const showImage = (index) => {
+                    infoImage.style.opacity = 0;
+                    setTimeout(() => {
+                        infoImage.src = currentImages[index];
+                        infoImage.style.opacity = 1;
+                    }, 300);
+                };
+                
+                // Show first image
+                showImage(currentImageIndex);
 
-                // Show navigation buttons
-                prevBtn.style.display = "block";
-                nextBtn.style.display = "block";
+                // Previous button click handler
+                prevBtn.onclick = function () {
+                    if (currentImages.length > 0) {
+                        currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+                        showImage(currentImageIndex);
+                    }
+                };
+
+                // Next button click handler
+                nextBtn.onclick = function () {
+                    if (currentImages.length > 0) {
+                        currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+                        showImage(currentImageIndex);
+                    }
+                };
             } else {
-                console.warn("No images found for district:", districtId);
-                infoImage.src = "images/default.jpg"; // Fallback image
-                prevBtn.style.display = "none";
-                nextBtn.style.display = "none";
+                infoImage.src = "images/default.jpg";
+                console.log("No images found for this district");
             }
-
-            // Show the info card
-            infoCard.style.display = "block";
-        } else {
-            console.error("District not found in data:", districtId);
         }
-
-        // Event listeners for navigation buttons
-        prevBtn.onclick = function () {
-            if (currentImages.length > 0) {
-                currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
-                infoImage.src = currentImages[currentImageIndex];
-            }
-        };
-
-        nextBtn.onclick = function () {
-            if (currentImages.length > 0) {
-                currentImageIndex = (currentImageIndex + 1) % currentImages.length;
-                infoImage.src = currentImages[currentImageIndex];
-            }
-        };
-    
-
 
         // Show the info card
         infoCard.style.display = "block";
@@ -525,5 +602,21 @@ document.addEventListener("DOMContentLoaded", function () {
             option.classList.remove('selected');
         });
         element.classList.add('selected');
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Automatically select Ahmedabad as the default city when the page loads
+    const ahmedabadPath = document.getElementById('Ahmedabad');
+    if (ahmedabadPath) {
+        // Simulate a click on the Ahmedabad path to display its info
+        const clickEvent = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window
+        });
+        ahmedabadPath.dispatchEvent(clickEvent);
+        console.log('Default city (Ahmedabad) selected on page load');
     }
 });
