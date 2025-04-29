@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      { "source": "/", "destination": "/frontPage.html" },
+      { "source": "/react", "destination": "/index.html" },
+      { "source": "/react/(.*)", "destination": "/index.html" }
+    ]
+  }
+  
