@@ -91,10 +91,25 @@ The response must be in this specific JSON format with exact variable names:
 
 Include 2-3 hotel options with all required fields. For each place in the itinerary, include 'timeToSpend' (e.g., '2-3 hours') and 'travelTime' (e.g., 'From Hotel: 15 minutes'). For multiple days, follow the same structure with day2, day3, etc.`;
 
+
+function FullPageLoader() {
+  return (
+    <div className="fixed inset-0 bg-white z-[9999] flex flex-col items-center justify-center">
+      <div className="relative flex items-center justify-center">
+        <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-b-4 border-orange-500"></div>
+        <span className="absolute text-[10px] font-bold text-orange-600">GujaratSafar</span>
+      </div>
+      <p className="text-xl font-semibold mt-5 text-orange-500">Loading, please be patient...</p>
+    </div>
+  );
+}
+
 function Index() {
   const [formData, setFormData] = useState({});
   const [openDialog, setOpenDialog] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
+
   const navigate = useNavigate();
 
   const handleInputChange = (name, value) => {
@@ -107,6 +122,13 @@ function Index() {
   useEffect(() => {
     console.log(formData);
   }, [formData]);
+
+
+  //loader animation
+  useEffect(() => {
+    const timer = setTimeout(() => setPageLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Google authentication functions
   const login = useGoogleLogin({
@@ -184,6 +206,9 @@ function Index() {
       OnGenerateTrip();
     });
   };
+
+  //loading condition
+  if (pageLoading) return <FullPageLoader />;
 
   return (
     <>
