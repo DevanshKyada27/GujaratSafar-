@@ -14,25 +14,27 @@ import MyTrips from './my-trips/index'
 const googleAuthClientId = import.meta.env.VITE_GOOGLE_AUTH_CLIENT_ID;
 
 const router = createBrowserRouter([
-  {
-    path:'/',
-    element:<App/>,
-    children: [
-      {
-        path: '/',
-        element: <CreateTrip />
-      },
-      {
-        path:'/view-trip/:tripId', //dynamic routing with the help of tripId
-        element:<Viewtrip/>
-      },
-      {
-        path:'/my-trips',
-        element:<MyTrips/>
-      }
-    ]
-  }
-])
+    {
+      path:'/',
+      element:<App/>,
+      children: [
+        {
+          path: '/',
+          element: <CreateTrip />
+        },
+        {
+          path:'/view-trip/:tripId', //dynamic routing with the help of tripId
+          element:<Viewtrip/>
+        },
+        {
+          path:'/my-trips',
+          element:<MyTrips/>
+        }
+      ]
+    }
+  ],
+  { basename: '/react' }
+)
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
