@@ -627,9 +627,4 @@ document.getElementById('start-btn').addEventListener('click', function() {
 });
 
 
-//loader logic
-window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
-    loader.style.display = "none"; // hide after page fully loads
-});
     
