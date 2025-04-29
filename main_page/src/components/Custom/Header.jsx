@@ -54,7 +54,7 @@ function Header() {
       <div>
         {user ? (
           <div className='flex items-center gap-5'>
-            <a href="/">
+            <a href="/react">
               <Button variant="whiteOutline" className='rounded-full bg-white hover:bg-gray-100 text-white px-4 py-2 border border-gray-300'>
                 + Create Trip
               </Button>

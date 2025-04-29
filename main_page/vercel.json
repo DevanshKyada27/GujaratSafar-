@@ -2,10 +2,8 @@
     "rewrites": [
       { "source": "/", "destination": "/frontPage.html" },
       { "source": "/react", "destination": "/index.html" },
-      { "source": "/react/(.*)", "destination": "/index.html" }
-    ],
-    "static": {
-      "source": "/frontPage.html",
-      "destination": "/frontPage.html"
-    }
+      { "source": "/react/(.*)", "destination": "/index.html" },
+      { "source": "/my-trips", "destination": "/index.html" },
+    { "source": "/my-trips/(.*)", "destination": "/index.html" }
+    ]
 }  
