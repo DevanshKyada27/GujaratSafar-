@@ -623,7 +623,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.getElementById('start-btn').addEventListener('click', function() {
-    window.location.href = '/'; // React app is at root now
+    window.location.href = '/react'; // React app is at root now
 });
 
 
