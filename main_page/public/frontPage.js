@@ -624,5 +624,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('start-btn').addEventListener('click', function() {
     window.location.href = '/'; // React app is at root now
-  });
-  
+});
+
+
+//loader logic
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    loader.style.display = "none"; // hide after page fully loads
+});
+    
