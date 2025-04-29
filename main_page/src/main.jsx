@@ -13,7 +13,7 @@ const googleAuthClientId = import.meta.env.VITE_GOOGLE_AUTH_CLIENT_ID;
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <GoogleOAuthProvider clientId={googleAuthClientId}>
-    <BrowserRouter basename="/react">
+    <BrowserRouter>
       <App />
       <Toaster />
     </BrowserRouter>
