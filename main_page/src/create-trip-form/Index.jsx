@@ -150,6 +150,12 @@ function Index() {
       return;
     }
 
+    //days condition
+    if (parseInt(formData?.noOfDays) > 7) {
+      toast("Please enter the days less than or equal to 7!");
+      return;
+    }
+
     setLoading(true);
     
     // Format budget to match Firebase (first letter capitalized)
