@@ -31,12 +31,21 @@ header .name {
 }
 
 /*background video styling*/
+.video {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .background-video {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+    z-index: -1;
 }
 
 .home {
@@ -130,7 +139,7 @@ body {
 }
 
 .gujMap {
-    background-image: url(https://www.gujarattourism.com/content/dam/gujrattourism/images/other-images/common-banner.jpg);
+    background-image: url("guj-map-svg-banner.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -700,9 +709,90 @@ body {
     cursor: pointer;
     text-decoration: none; /* removes underline */
     z-index: 1000;
-  }
+}
   
-  .meet-our-team-btn:hover {
+.meet-our-team-btn:hover {
     text-decoration: none;
     color: #ddd; /* subtle hover effect */
+}
+
+
+
+/*responsive layout for the svg gujarat map for 1070 and 730 screen size*/
+/* Responsive Layout for width <= 1070px */
+@media (max-width: 1070px) {
+  .gujMap {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    padding-top: 30px;
   }
+
+  .map-container {
+    order: 1;
+    position: static;
+    width: 90%;
+    height: auto;
+    margin: 10px auto;
+    padding: 0;
+    transform: none;
+  }
+
+  .info-card {
+    order: 2;
+    margin: 20px auto;
+    width: 90%;
+    padding: 20px;
+  }
+
+  .image-carousel img {
+    max-height: 180px;
+  }
+
+  .carousel-btn {
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+}
+
+/* Responsive Tweaks for height <= 730px */
+@media (max-height: 730px) {
+  .gujMap {
+    padding-top: 20px;
+  }
+
+  .info-card {
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .info-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .info-card p {
+    font-size: 0.9rem;
+  }
+
+  .image-carousel img {
+    max-height: 150px;
+  }
+
+  .carousel-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+/* Combine both width <= 1070px and height <= 730px */
+@media (max-width: 1070px) and (max-height: 730px) {
+  .info-card {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .image-carousel img {
+    max-height: 140px;
+  }
+}
