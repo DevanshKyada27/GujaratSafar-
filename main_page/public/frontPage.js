@@ -620,3 +620,11 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Default city (Ahmedabad) selected on page load');
     }
 });
+
+
+document.getElementById('start-btn').addEventListener('click', function() {
+    window.location.href = '/'; // React app is at root now
+});
+
+
+    
